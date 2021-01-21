@@ -1,0 +1,15 @@
+- tableau pour chaque nom : n_fake+N, n_N, n_total
+
+- regarder sklearn.feature_selection pour retenir dimensions significative (cf exp5)
+- classifier sur ces dimensions :
+	- reserver certains noms hors du training pour évaluation de la capacité d'abstraction du modèle
+	- attention à préserver fréquences de chaque classe dans le train_set
+	- essayer d'équilibrer les classes
+
+Classif binaire privatif vs all ? (augmentation de la variété de l'opposant)
+
+Un classifieur est il capable de distinguer les représentations de FAKE selon son degré de privativité ?
+
+
+
+- mettre tout dans un data frame pandas pour faciliter l'accès
