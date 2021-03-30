@@ -1,6 +1,52 @@
-- tableau pour chaque nom : n_fake+N, n_N, n_total
+BNC c'est quoi et pourquoi c'est intéressant
+presenter notre resultat
+Compare random results avec notre resultat (raw data || feature select)
+En quoi la partition est spécifique (n'importe quelle partition ne donnera pas un si bon résultat) => comparer avec la répartition des taux de réussites des autres partitions (histogramme)
 
-- regarder sklearn.feature_selection pour retenir dimensions significative (cf exp5)
+
+Avec BERT
+	AVEC LES DIFFERENTS PREPROCESSING : (raw / tsne / kbest)
+		classif classique
+		BNC (true classes)
+		classif classqiue + BNC sur 88 partitions aléatoires "proches"
+
+	+ exps passées (celles sur les cos sim)
+
+
+
+
+
+
+
+
+- partition aleatoire de la classe pour sanity check
+==> sanity check sur tous les jeux de données
+- BERT (last layer, sum all layers, envoyer mail à Remi savoir ce qui est le mieux)
+
+
+- Feature selection (pourquoi et comment)
+- BNC (fake => noun)
+- feature select sur les noms : backward direction ??????????
+
+
+
+- tableau pour chaque nom : n_fake+N, n_N, n_total
+- retrouver phrase à partir de l'embedding de fake
+- 
+- refaire FeatureSelect+Classif sur les noms pour comparer (lequel des 2 types d'embeddings retient le mieux la privativité de fake)
+- est-ce que les mêmes features sont retenues selon le type d'embdg ?
+- sanity check : classif les embeddings sans fake => même résultat ?? si oui, peut-être qu'il y a un biais (non trivial) dans la sémantique propre des noms qui les rapproche ?
+
+- classif fake/not fake des noms => supposée être une tâche plus simple
+- quelle couche du LM perform le mieux sur la classif priv vs all
+
+- classif priv+ambi v/s non priv => perform better ???
+
+
+------------------------------------------------------------------------------
+Un classifieur est il capable de distinguer les représentations de FAKE selon son degré de privativité ?
+
+- les features retenues sont-elles les memes selon les modeles ?
 - classifier sur ces dimensions :
 	- reserver certains noms hors du training pour évaluation de la capacité d'abstraction du modèle
 	- attention à préserver fréquences de chaque classe dans le train_set
@@ -8,8 +54,5 @@
 
 Classif binaire privatif vs all ? (augmentation de la variété de l'opposant)
 
-Un classifieur est il capable de distinguer les représentations de FAKE selon son degré de privativité ?
-
-
-
 - mettre tout dans un data frame pandas pour faciliter l'accès
+- regarder sklearn.feature_selection pour retenir dimensions significative (cf exp5)
